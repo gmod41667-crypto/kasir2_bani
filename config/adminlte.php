@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 4',
+    'title' => 'kasir Bani',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -77,8 +77,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/assets/img/AdminLTELogo.png',
+    'logo' => '<b>Kasir</b>Bani',
+    'logo_img' => 'vendor/adminlte/dist/assets/img/logoaw laragon.png',
     'logo_img_class' => 'brand-image opacity-75 shadow',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs opacity-75',
@@ -100,7 +100,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/assets/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/assets/img/logoaw laragon.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -136,7 +136,7 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/assets/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/assets/img/logoaw laragon.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -763,7 +763,7 @@ return [
     |
     */
 
-    'menu' => [
+   'menu' => [
         // Navbar items:
         [
             'type' => 'navbar-search',
@@ -777,8 +777,8 @@ return [
         [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
-        ],
-
+        ], 
+        
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
@@ -790,77 +790,33 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'bi bi-file-earmark',
+            'text' => 'dashboard',
+            'url' => 'admin/dashboard',
+            'icon' => 'far fa-fw fa-file',
             'label' => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'bi bi-person',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'bi bi-lock',
-        ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'bi bi-share',
+            'text' => 'data master',
+            'icon' => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'data siswa',
                     'url' => '#',
                 ],
                 [
-                    'text' => 'level_one',
+                    'text' => 'data siswa',
                     'url' => '#',
                     'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
+                        
+                        
                     ],
                 ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
+                
             ],
         ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'danger',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'warning',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'info',
-            'url' => '#',
-        ],
+        
     ],
 
     /*
