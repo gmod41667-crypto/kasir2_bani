@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;  
+use App\Http\Controllers\Jurusancontroller;
+route::get('/jurusan', [Jurusancontroller::class, 'index'])->name('jurusan.index');
 
 Route::get('/', function () {
     return view('welcome');

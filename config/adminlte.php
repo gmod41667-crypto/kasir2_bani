@@ -790,10 +790,31 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'dashboard',
+            'text' => 'jurusan',
             'url' => 'admin/dashboard',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
+            
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'jenjang',
+            'url' => 'admin/dashboard',
+            'icon' => 'far fa-fw fa-file',
+            
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Kelas',
+            'url' => 'admin/dashboard',
+            'icon' => 'far fa-fw fa-file',
+            
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Siswa',
+            'url' => 'admin/dashboard',
+            'icon' => 'far fa-fw fa-file',
+            
             'label_color' => 'success',
         ],
 
