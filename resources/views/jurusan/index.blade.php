@@ -12,11 +12,11 @@
         <div class="card-header">
             <h3 class="card-title">Daftar Jurusan</h3>
             <div class="card-tools">
-                <a href="{{ route('jurusan.cetak-pdf') }}" class="btn btn-danger btn-sm" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Cetak PDF
-                </a>
-                <a href="{{ route('jurusan.create') }}" class="btn btn-primary btn-sm">
+                <a href="{{ route('jurusan.create') }}" class="btn btn-success btn-sm">
                     <i class="fas fa-plus"></i> Tambah Jurusan
+                </a>
+        
+                    
                 </a>
             </div>
         </div>
@@ -57,14 +57,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($jurusan as $key => $jurusan)
+                    @forelse ($jurusans as $key => $jurusan)
                     <tr>
-                        <td>{{ $jurusan->firstItem() + $key }}</td>
+                        <td>{{ $jurusans->firstItem() + $key }}</td>
                         <td>{{ $jurusan->nama_jurusan }}</td>
                         <td>{{ $jurusan->keterangan }}</td>
                         <td>{{ $jurusan->status }}</td>
                         <td>
-                            {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
+                            {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon on  ly) --}}
                             <a class="btn btn-info btn-sm" href="{{ route('jurusan.show', $jurusan->id) }}" title="Lihat">
                                 <i class="fas fa-eye"></i>
                             </a>
@@ -90,7 +90,7 @@
         </div>
 
         <div class="card-footer clearfix">
-            {!! $siswas->appends(request()->query())->links('pagination::bootstrap-4') !!}
+            {!! $jurusans->appends(request()->query())->links('pagination::bootstrap-4') !!}
         </div>
     </div>
 @stop

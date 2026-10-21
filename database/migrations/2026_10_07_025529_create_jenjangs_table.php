@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama_jenjang');
             $table->text('keterangan')->nullable();
-            $table->string('create_at')->nullable();
-            $table->string('update_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Kelas;
 class Kelascontroller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $kelas = Kelas::query()
+            ->when($request->search, function ($query, $search) {
+                $query->where('nama_kelas', 'like', "%{$search}%")
+                      ->orWhere('kode_kelas', 'like', "%{$search}%");
+            })
+            ->paginate(10); 
+
+        return view('kelas.index', compact('kelas'));
     }
 
     /**

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->enum('jenis_kelamin',['L','P']);
             $table->text('alamat_siswa')->nullable();
             $table->foreignId('kelas_id')->constrained('kelas')->onDelete('cascade');
-            $table->string('create_at')->nullable();
-            $table->string('update_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->timestamps();
         });
     }

@@ -9,16 +9,16 @@ class Jurusancontroller extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-                $jurusan = Jurusan::query()
+                $jurusans = Jurusan::query()
             ->when($request->search, function ($query, $search) {
                 $query->where('nama_jurusan', 'like', "%{$search}%")
                       ->orWhere('kode_jurusan', 'like', "%{$search}%");
             })
             ->paginate(10); 
 
-        return view('jurusan.index', compact('jurusan'));
+        return view('jurusan.index', compact('jurusans'));
 
     }
 
@@ -27,7 +27,7 @@ class Jurusancontroller extends Controller
      */
     public function create()
     {
-        //
+         return view('jurusan.create');
     }
 
     /**
