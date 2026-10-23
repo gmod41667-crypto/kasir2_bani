@@ -791,28 +791,28 @@ return [
         ],
         [
             'text' => 'jurusan',
-            'url' => 'admin/dashboard',
+            'url' => 'jurusan',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',
         ],
         [
             'text' => 'jenjang',
-            'url' => 'admin/dashboard',
+            'url' => 'jenjang',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',
         ],
         [
             'text' => 'Kelas',
-            'url' => 'admin/dashboard',
+            'url' => 'kelas',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',
         ],
         [
             'text' => 'Siswa',
-            'url' => 'admin/dashboard',
+            'url' => 'siswa',
             'icon' => 'far fa-fw fa-file',
             
             'label_color' => 'success',

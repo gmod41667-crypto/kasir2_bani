@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Siswa;
 class Siswacontroller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+         $siswas = Siswa::query()
+            ->when($request->search, function ($query, $search) {
+                $query->where('nama_siswa', 'like', "%{$search}%")
+                      ->orWhere('nis', 'like', "%{$search}%");
+            })
+            ->paginate(10); 
+
+        return view('siswa.index', compact('siswas'));
     }
 
     /**
