@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\Jurusan;
+use App\Models\Jenjang;
 class Kelascontroller extends Controller
 {
     /**
@@ -26,7 +28,9 @@ class Kelascontroller extends Controller
      */
     public function create()
     {
-        //
+        $jenjangs = Jenjang::all();
+        $jurusans = Jurusan::all();
+        return view('kelas.create', compact('jenjangs', 'jurusans'));
     }
 
     /**
@@ -34,7 +38,18 @@ class Kelascontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi sekaligus simpan hasilnya ke variabel $data
+        $data = $request->validate([
+            'nama_kelas' => 'required|string|max:255',
+            'jurusan_id' => 'required|exists:jurusans,id',
+            'jenjang_id'=> 'required|exists:jenjangs,id',
+            'status'=> 'required|string|max:50',
+        ]);
+
+        // Simpan data langsung (tanpa perlu definisikan satu-satu)
+        Kelas::create($data);
+
+        return redirect()->route('kelas.index')->with('success', 'Kelas berhasil ditambahkan.');
     }
 
     /**

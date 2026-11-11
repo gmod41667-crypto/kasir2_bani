@@ -50,6 +50,7 @@
                 <thead>
                     <tr>
                         <th style="width: 10px">No</th>
+                        <th>Kode Jurusan</th>
                         <th>Nama Jurusan</th>
                         <th>Keterangan</th>
                         <th>Status</th>
@@ -60,6 +61,7 @@
                     @forelse ($jurusans as $key => $jurusan)
                     <tr>
                         <td>{{ $jurusans->firstItem() + $key }}</td>
+                        <td>{{ $jurusan->kode_jurusan }}</td>
                         <td>{{ $jurusan->nama_jurusan }}</td>
                         <td>{{ $jurusan->keterangan }}</td>
                         <td>{{ $jurusan->status }}</td>

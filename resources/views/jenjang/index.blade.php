@@ -50,6 +50,7 @@
                         <th style="width: 10px">No</th>
                         <th>Nama Jenjang</th>
                         <th>Keterangan</th>
+                        <th>Aksi</th>
                         
                     </tr>
                 </thead>

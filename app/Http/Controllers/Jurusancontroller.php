@@ -35,7 +35,18 @@ class Jurusancontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi sekaligus simpan hasilnya ke variabel $data
+        $data = $request->validate([
+            'kode_jurusan' => 'required|string|unique:jurusans|max:255',
+            'nama_jurusan' => 'required|string|max:100',
+            'keterangan'=> 'required|string|max:100',
+            'status'=> 'required|string|max:50',
+        ]);
+
+        // Simpan data langsung (tanpa perlu definisikan satu-satu)
+        Jurusan::create($data);
+
+        return redirect()->route('jurusan.index')->with('success', '');
     }
 
     /**

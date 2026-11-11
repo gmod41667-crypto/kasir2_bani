@@ -26,7 +26,7 @@ class Siswacontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('siswa.create');
     }
 
     /**
@@ -34,7 +34,15 @@ class Siswacontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nis' => 'required|string|unique:siswas|max:255',
+            'nama_siswa' => 'required|string|max:100',
+            'jenis_kelamin' => 'required|string|max:255',
+            'alamat_siswa' => 'required|string|max:255',
+            'kelas_id' => 'required|integer|exists:kelas,id',
+        ]);
+        Siswa::create($data);
+        return redirect()->route('siswa.index')->with('success', '');
     }
 
     /**

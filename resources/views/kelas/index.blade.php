@@ -49,8 +49,8 @@
                     <tr>
                         <th style="width: 10px">No</th>
                         <th>Nama Kelas</th>
-                        <th>Jurusan_id</th>
-                        <th>Jenjang_id</th>
+                        <th>Jurusan</th>
+                        <th>Jenjang</th>
                         <th>Status</th>
                         
                     </tr>

@@ -13,6 +13,16 @@
                 @csrf 
 
                 <div class="form-group">
+                    <label for="kode_jurusan">Kode Jurusan</label>
+                    <input type="text" name="kode_jurusan" class="form-control @error('kode_jurusan') is-invalid @enderror" id="kode_jurusan" required value="{{ old('kode_jurusan') }}">
+                    @error('kode_jurusan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="nama_jurusan">Nama Jurusan</label>
                     <input type="text" name="nama_jurusan" class="form-control @error('nama_jurusan') is-invalid @enderror" id="nama_jurusan" required value="{{ old('nama_jurusan') }}">
                     @error('nama_jurusan')
@@ -24,18 +34,8 @@
 
                 <div class="form-group">
                     <label for="keterangan">Keterangan</label>
-                    <input type="text" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" required value="{{ old('keterangan') }}">
+                    <input type="text" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" required placeholder="Contoh: Rekayasa Perangkat Lunak" value="{{ old('keterangan') }}">
                     @error('keterangan')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="jurusan">Jurusan</label>
-                    <input type="text" name="jurusan" class="form-control @error('jurusan') is-invalid @enderror" id="jurusan" required placeholder="Contoh: Rekayasa Perangkat Lunak" value="{{ old('jurusan') }}">
-                    @error('jurusan')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

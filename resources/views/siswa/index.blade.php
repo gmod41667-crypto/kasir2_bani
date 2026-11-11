@@ -67,6 +67,7 @@
                         <td>{{ $siswa->kelas_id }}</td>
                         <td>{{ $siswa->jenis_kelamin }}</td>
                         <td>{{ $siswa->alamat_siswa }}</td>
+                        <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon on  ly) --}}
                             <a class="btn btn-info btn-sm" href="{{ route('siswa.show', $siswa->id) }}" title="Lihat">
                                 <i class="bi bi-eye"></i>
